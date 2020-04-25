@@ -32,7 +32,7 @@ class MyHomeState extends State<Home> with SingleTickerProviderStateMixin {
     return Scaffold(
       // Appbar
       appBar: AppBar(
-        title: Text("Using Bottom Navigation Bar"),
+        title: Text("The MIT Post"),
         backgroundColor: Colors.blue,
       ),
       body: TabBarView(
