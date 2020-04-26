@@ -2,9 +2,10 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 
 class Layout extends StatefulWidget {
-  final Future<List<dynamic>> imagesFuture;
+  final Future<List<dynamic>> api;
+  final Function element;
 
-  Layout({this.imagesFuture});
+  Layout({this.api, this.element});
 
   @override
   _LayoutState createState() => _LayoutState();
@@ -37,15 +38,17 @@ class _LayoutState extends State<Layout> with AutomaticKeepAliveClientMixin<Layo
       color: Color(0xFFFAFAFA),
       child: Center(
         child: FutureBuilder<List<dynamic>>(
-          future: widget.imagesFuture,
+          future: widget.api,
           builder: (context, snapshot) {
             if (snapshot.hasData) {
-              List<dynamic> feed = snapshot.data;
+              List<dynamic> data = snapshot.data;
 
               return ListView.separated(
-                itemCount: feed.length,
+                itemCount: data.length,
                 itemBuilder: (context, index) {
-                  return new Image.network(feed[index].toString());
+                  return widget.element(
+                    data[index]// gives object of type Map<String, Object>
+                  ); 
                 },
                 separatorBuilder: (context, index) {
                     // return SizedBox(height: 50, child: Container(color: Color(0xFFFAFAFA),));

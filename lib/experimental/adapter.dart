@@ -1,0 +1,5 @@
+/* 
+* Adapter
+*   Input: ApiFeeder
+*   Output: 
+*/

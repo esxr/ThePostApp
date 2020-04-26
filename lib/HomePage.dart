@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:thepostapp/experimental/ElementUI.dart';
-import 'package:thepostapp/experimental/UI.dart';
-import 'package:thepostapp/experimental/feeder.dart';
-import 'package:thepostapp/experimental/layout.dart';
+import 'package:thepostapp/tabs/Articles.dart';
 import 'package:thepostapp/tabs/placeHolderTab.dart';
 import 'package:thepostapp/views/webView.dart';
 
@@ -40,7 +37,11 @@ class MyHomeState extends State<Home> with SingleTickerProviderStateMixin {
         backgroundColor: Colors.blue,
       ),
       body: TabBarView(
-        children: <Widget>[WebViewContainer("https://www.google.com"), UI(imagesFuture: fetchFeed(),), PlaceHolderTab()],
+        children: <Widget>[
+          WebViewContainer("https://www.google.com"), 
+          PlaceHolderTab(),
+          Articles()
+        ],
         controller: controller,
       ),
       bottomNavigationBar: Material(
