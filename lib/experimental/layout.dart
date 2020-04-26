@@ -1,6 +1,5 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:thepostapp/experimental/adapter.dart';
 
 class Layout extends StatefulWidget {
   final Future<List<dynamic>> imagesFuture;

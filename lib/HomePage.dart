@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:thepostapp/experimental/ElementUI.dart';
 import 'package:thepostapp/experimental/UI.dart';
-import 'package:thepostapp/experimental/adapter.dart';
+import 'package:thepostapp/experimental/feeder.dart';
 import 'package:thepostapp/experimental/layout.dart';
 import 'package:thepostapp/tabs/placeHolderTab.dart';
 import 'package:thepostapp/views/webView.dart';

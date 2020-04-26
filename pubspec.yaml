@@ -37,6 +37,19 @@ dev_dependencies:
 
 # The following section is specific to Flutter.
 flutter:
+  fonts:
+    - family: Lato     
+      fonts:
+        - asset: assets/fonts/Lato-Thin.ttf
+        - asset: assets/fonts/Lato-Light.ttf
+          weight: 300
+        - asset: assets/fonts/Lato-Regular.ttf
+          weight: 500
+        - asset: assets/fonts/Lato-Black.ttf
+          weight: 700 
+          
+  assets:
+    - assets/img/
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
