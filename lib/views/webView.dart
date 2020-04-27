@@ -1,6 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
+Function openWebView(link, context) {
+  return () {
+    Navigator.of(context).push(
+      MaterialPageRoute(builder: (context) => WebViewContainer(link)),
+    );
+  };
+}
+
 class WebViewContainer extends StatefulWidget {
   final url;
 

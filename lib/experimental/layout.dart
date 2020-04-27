@@ -3,9 +3,10 @@ import 'package:flutter/material.dart';
 
 class Layout extends StatefulWidget {
   final Future<List<dynamic>> api;
-  final Function element;
+  final Function adapter;
+  final Function view;
 
-  Layout({this.api, this.element});
+  Layout({this.api, this.adapter, this.view});
 
   @override
   _LayoutState createState() => _LayoutState();
@@ -46,12 +47,9 @@ class _LayoutState extends State<Layout> with AutomaticKeepAliveClientMixin<Layo
               return ListView.separated(
                 itemCount: data.length,
                 itemBuilder: (context, index) {
-                  return widget.element(
-                    data[index]// gives object of type Map<String, Object>
-                  ); 
+                  return widget.view(data[index], widget.adapter);
                 },
                 separatorBuilder: (context, index) {
-                    // return SizedBox(height: 50, child: Container(color: Color(0xFFFAFAFA),));
                     return Divider(color: Colors.white.withAlpha(0),);
                 },
               );
