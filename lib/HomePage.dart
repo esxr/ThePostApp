@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:thepostapp/tabs/Articles.dart';
 import 'package:thepostapp/tabs/Events.dart';
+import 'package:thepostapp/tabs/Notices.dart';
 import 'package:thepostapp/views/PDFView.dart';
 import 'package:thepostapp/views/WebView.dart';
 
@@ -39,8 +40,9 @@ class MyHomeState extends State<Home> with SingleTickerProviderStateMixin {
       ),
       body: TabBarView(
         children: <Widget>[
-          PDFViewContainer("http://www.africau.edu/images/default/sample.pdf"),
+          // PDFViewContainer("https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf"),
           // PDFViewContainer("https://bit.ly/2qiV0gZ"),
+          Notices(),
           Events(),
           Articles()
         ],

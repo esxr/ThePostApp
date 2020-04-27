@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:thepostapp/views/PDFView.dart';
 import 'package:thepostapp/views/WebView.dart';
 
 // Function used to serve Article class as a parameter
@@ -40,48 +41,38 @@ class NoticeView extends StatelessWidget {
       decoration: containerDecoration,
       child: Column(
         children: <Widget>[
-          SizedBox(height: 10),
-
-          // Image
-          Image.network(
-            articleAdapter['imageURL'],
-            colorBlendMode: BlendMode.color,
-            color: Colors.red.withAlpha(50),
-          ),
-
           SizedBox(
             height: 10,
           ),
 
-          // Title
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Text(articleAdapter['title'], style: titleStyle),
-          ),
-
-          SizedBox(
-            height: 10,
-          ),
-
-          // Author & Timestamp
+          // Title and Quit Icon
           Row(
             crossAxisAlignment: CrossAxisAlignment.end,
             // mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               Expanded(
-                  child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Text(articleAdapter['author'], style: authorStyle),
-              )),
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Text(articleAdapter['title'], style: titleStyle),
+                ),
+              ),
               Padding(
                 padding: const EdgeInsets.only(right: 8, bottom: 8),
                 child: Text(
-                  articleAdapter['timestamp'].toString(),
+                  "(X)",
                   style: timestampStyle,
                   textAlign: TextAlign.right,
                 ),
               )
             ],
+          ),
+
+          SizedBox(height: 10),
+
+          // Date
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Text(articleAdapter['date'], style: timestampStyle),
           ),
 
           SizedBox(height: 10),
@@ -96,13 +87,17 @@ class NoticeView extends StatelessWidget {
             height: 10,
           ),
 
-          // Read More Link
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: FlatButton(
-              child: Text("Read More...", style: authorStyle),
-              onPressed: openWebView(articleAdapter['link'], context)
-            ),
+          // Image
+          (articleAdapter['imageURL'] == "")
+              ? PDFViewContainer(articleAdapter['pdfURL'])
+              : Image.network(
+                  articleAdapter['imageURL'],
+                  colorBlendMode: BlendMode.color,
+                  color: Colors.red.withAlpha(50),
+                ),
+
+          SizedBox(
+            height: 10,
           ),
         ],
       ),

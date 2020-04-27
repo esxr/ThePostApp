@@ -8,7 +8,8 @@ Map<String, Object> noticeAdapter(map) {
   return {
     'title': map['title'] ?? "none",
     'content': map['content'] ?? "none",
-    'imageLink': map['imageLink'],
-    'pdfLink': map['pdfLink'],
+    'date': map['date'] ?? "none",
+    'imageURL': map['imageLink'],
+    'pdfURL': map['pdfLink'],
   };
 }

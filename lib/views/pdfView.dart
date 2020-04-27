@@ -6,6 +6,7 @@ import 'package:pdf_viewer_plugin/pdf_viewer_plugin.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:http/http.dart' as http;
 
+// Fortunately this function will NEVER be used - Pranav
 Function openPDFView(link, context) {
   return () {
     Navigator.of(context).push(
@@ -14,6 +15,8 @@ Function openPDFView(link, context) {
   };
 }
 
+// To be used for 'inline PDFs'
+// Very rudimentary and questionable method of implementation
 class PDFViewContainer extends StatefulWidget {
   final url;
 
@@ -25,11 +28,16 @@ class PDFViewContainer extends StatefulWidget {
 
 class _PDFViewContainerState extends State<PDFViewContainer> {
   var _url;
-  
+
   String path;
   String filename = UniqueKey().toString();
 
   _PDFViewContainerState(this._url);
+
+  @override
+  void initState() {
+    loadPdf();
+  }
 
   Future<String> get _localPath async {
     final directory = await getApplicationDocumentsDirectory();
@@ -66,22 +74,19 @@ class _PDFViewContainerState extends State<PDFViewContainer> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: Column(
-        children: <Widget>[
-          (path != null)
-              ? Container(
-                  height: 300.0,
+      child: (path == null)
+          ? Center(child: CircularProgressIndicator())
+          : Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Expanded(
                   child: PdfViewer(
                     filePath: path,
                   ),
                 )
-              : Text("Pdf is not Loaded"),
-          RaisedButton(
-            child: Text("Load pdf"),
-            onPressed: loadPdf,
-          ),
-        ],
-      ),
+              ],
+            ),
     );
   }
 }
