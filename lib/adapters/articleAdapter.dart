@@ -13,12 +13,4 @@ Map<String, Object> articleAdapter(map) {
     'timestamp': map['timestamp'] ?? "none",
     'link': map['link'] ?? "none"
   };
-
-  // return {
-  //   'title': "none",
-  //   'author': "none",
-  //   'content': "none",
-  //   'imageURL': "none",
-  //   'timestamp': "none"
-  // };
 }

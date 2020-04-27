@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:thepostapp/tabs/Articles.dart';
-import 'package:thepostapp/tabs/placeHolderTab.dart';
-import 'package:thepostapp/views/webView.dart';
+import 'package:thepostapp/tabs/Events.dart';
+import 'package:thepostapp/views/PDFView.dart';
+import 'package:thepostapp/views/WebView.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -38,8 +39,9 @@ class MyHomeState extends State<Home> with SingleTickerProviderStateMixin {
       ),
       body: TabBarView(
         children: <Widget>[
-          WebViewContainer("https://www.google.com"), 
-          PlaceHolderTab(),
+          PDFViewContainer("http://www.africau.edu/images/default/sample.pdf"),
+          // PDFViewContainer("https://bit.ly/2qiV0gZ"),
+          Events(),
           Articles()
         ],
         controller: controller,

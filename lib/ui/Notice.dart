@@ -1,16 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:thepostapp/adapters/articleAdapter.dart';
 import 'package:thepostapp/views/WebView.dart';
 
 // Function used to serve Article class as a parameter
-Function Article() {
-  return (data, adapter) => ArticleView(data: data, adapter: adapter);
+Function Notice() {
+  return (data, adapter) => NoticeView(data: data, adapter: adapter);
 }
 
-class ArticleView extends StatelessWidget {
+class NoticeView extends StatelessWidget {
   final data, adapter;
 
-  ArticleView({this.data, this.adapter});
+  NoticeView({this.data, this.adapter});
 
   // UI
   TextStyle titleStyle = new TextStyle(
