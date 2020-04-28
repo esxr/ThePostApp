@@ -7,6 +7,11 @@ import 'package:thepostapp/ui/Notice.dart';
 class Notices extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Layout(api: noticesApi(), adapter: NoticeAdapter(), ui: Notice());
+    return Layout(
+      api: noticesApi(),
+      adapter: NoticeAdapter(),
+      ui: Notice(),
+      divider: null,
+    );
   }
 }

@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:thepostapp/tabs/Articles.dart';
 import 'package:thepostapp/tabs/Events.dart';
 import 'package:thepostapp/tabs/Notices.dart';
-import 'package:thepostapp/views/PDFView.dart';
-import 'package:thepostapp/views/WebView.dart';
 
 class Home extends StatefulWidget {
   @override
