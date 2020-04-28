@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:thepostapp/views/PDFView.dart';
+import 'package:thepostapp/components/PDFView.dart';
 
 // Function used to serve Article class as a parameter
 Function NoticeExpanded() {

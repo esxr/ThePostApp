@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:thepostapp/views/WebView.dart';
+import 'package:thepostapp/components/WebView.dart';
 
 // Function used to serve Article class as a parameter
 Function Article() {

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:thepostapp/views/WebView.dart';
+import 'package:thepostapp/components/WebView.dart';
 
 class About extends StatelessWidget {
   @override
