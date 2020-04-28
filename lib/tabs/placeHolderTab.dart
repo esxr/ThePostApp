@@ -4,7 +4,7 @@ class PlaceHolderTab extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.red,
+      backgroundColor: Colors.white,
       body: Container(
         child: Center(
           child: Column(
@@ -14,11 +14,11 @@ class PlaceHolderTab extends StatelessWidget {
               Icon(
                 Icons.favorite,
                 size: 160.0,
-                color: Colors.white,
+                color: Colors.red,
               ),
               Text(
-                "First Tab",
-                style: TextStyle(color: Colors.white),
+                "Placeholder Tab",
+                style: TextStyle(color: Colors.grey),
               )
             ],
           ),

@@ -7,6 +7,17 @@ import 'package:thepostapp/ui/Article.dart';
 class Events extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Layout(api: eventsApi(), adapter: EventAdapter(), ui: Article());
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Events", style: TextStyle(color: Colors.black)),
+        centerTitle: true,
+        backgroundColor: Colors.white,
+      ),
+      body: Layout(
+        api: eventsApi(),
+        adapter: EventAdapter(),
+        ui: Article(),
+      ),
+    );
   }
 }

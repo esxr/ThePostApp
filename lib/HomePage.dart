@@ -4,6 +4,7 @@ import 'package:thepostapp/tabs/Articles.dart';
 import 'package:thepostapp/tabs/Events.dart';
 import 'package:thepostapp/tabs/Notices.dart';
 import 'package:thepostapp/tabs/Privacy.dart';
+import 'package:thepostapp/tabs/placeHolderTab.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -33,19 +34,13 @@ class MyHomeState extends State<Home> with SingleTickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // Appbar
-      appBar: AppBar(
-        title: Text("The MIT Post"),
-        backgroundColor: Colors.blue,
-      ),
       body: TabBarView(
         children: <Widget>[
           // PDFViewContainer("https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf"),
           // PDFViewContainer("https://bit.ly/2qiV0gZ"),
-          Notices(),
-          About(),
-          // Events(),
-          Articles()
+          PlaceHolderTab(),
+          PlaceHolderTab(),
+          PlaceHolderTab()
         ],
         controller: controller,
       ),

@@ -7,6 +7,17 @@ import 'package:thepostapp/ui/Article.dart';
 class Articles extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Layout(api: articlesApi(), adapter: ArticleAdapter(), ui: Article());
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Headlines", style: TextStyle(color: Colors.black)),
+        centerTitle: true,
+        backgroundColor: Colors.white,
+      ),
+      body: Layout(
+        api: articlesApi(),
+        adapter: ArticleAdapter(),
+        ui: Article(),
+      ),
+    );
   }
 }
