@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:thepostapp/tabs/About.dart';
 import 'package:thepostapp/tabs/Articles.dart';
 import 'package:thepostapp/tabs/Events.dart';
 import 'package:thepostapp/tabs/Notices.dart';
+import 'package:thepostapp/tabs/Privacy.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -41,7 +43,8 @@ class MyHomeState extends State<Home> with SingleTickerProviderStateMixin {
           // PDFViewContainer("https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf"),
           // PDFViewContainer("https://bit.ly/2qiV0gZ"),
           Notices(),
-          Events(),
+          About(),
+          // Events(),
           Articles()
         ],
         controller: controller,
