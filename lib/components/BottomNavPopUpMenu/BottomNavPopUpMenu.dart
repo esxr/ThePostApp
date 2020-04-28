@@ -31,18 +31,18 @@ class BottomNavPopUpMenu extends StatelessWidget {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: <Widget>[
-                            MenuButton("Privacy", Icons.security),
-                            MenuButton("Our Website", Icons.web),
-                            MenuButton("About Us", Icons.info_outline),
+                            MenuButton("Privacy", Icons.security, tab: Privacy()),
+                            MenuButton("Our Website", Icons.web, link: "https://themitpost.com"),
+                            MenuButton("About Us", Icons.info_outline, tab: About()),
                             MenuButton("Magazines", Icons.chrome_reader_mode),
                           ],
                         ),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: <Widget>[
-                            MenuButton("Source Code", Icons.code),
-                            MenuButton("Developer", Icons.developer_mode),
-                            MenuButton("Academic Calendar", Icons.calendar_view_day),
+                            MenuButton("Source Code", Icons.code, link: "https://github.com/pd-escher/ThePostApp"),
+                            MenuButton("Developer", Icons.developer_mode, tab: PlaceHolderTab()),
+                            MenuButton("Academic\n Calendar", Icons.calendar_view_day, tab: PlaceHolderTab()),
                             MenuButton("Clear Cache", Icons.delete_forever),
                           ],
                         ),
