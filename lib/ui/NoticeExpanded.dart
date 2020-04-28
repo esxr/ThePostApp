@@ -37,69 +37,71 @@ class NoticeViewExpanded extends StatelessWidget {
   Widget build(BuildContext context) {
     var articleAdapter = adapter(data);
 
-    return Container(
-      decoration: containerDecoration,
-      child: Column(
-        children: <Widget>[
-          SizedBox(
-            height: 10,
-          ),
+    return Material(
+      child: Container(
+        decoration: containerDecoration,
+        child: Column(
+          children: <Widget>[
+            SizedBox(
+              height: 10,
+            ),
 
-          // Title and Quit Icon
-          Row(
-            crossAxisAlignment: CrossAxisAlignment.end,
-            // mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              Expanded(
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Text(articleAdapter['title'], style: titleStyle),
+            // Title and Quit Icon
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.end,
+              // mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Expanded(
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Text(articleAdapter['title'], style: titleStyle),
+                  ),
                 ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(right: 8, bottom: 8),
-                child: Text(
-                  "(X)",
-                  style: timestampStyle,
-                  textAlign: TextAlign.right,
-                ),
-              )
-            ],
-          ),
+                Padding(
+                  padding: const EdgeInsets.only(right: 8, bottom: 8),
+                  child: Text(
+                    "(X)",
+                    style: timestampStyle,
+                    textAlign: TextAlign.right,
+                  ),
+                )
+              ],
+            ),
 
-          SizedBox(height: 10),
+            SizedBox(height: 10),
 
-          // Date
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Text(articleAdapter['date'], style: timestampStyle),
-          ),
+            // Date
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text(articleAdapter['date'], style: timestampStyle),
+            ),
 
-          SizedBox(height: 10),
+            SizedBox(height: 10),
 
-          // Content
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Text(articleAdapter['content'], style: contentStyle),
-          ),
+            // Content
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text(articleAdapter['content'], style: contentStyle),
+            ),
 
-          SizedBox(
-            height: 10,
-          ),
+            SizedBox(
+              height: 10,
+            ),
 
-          // Image
-          (articleAdapter['imageURL'] == "")
-              ? PDFViewContainer(articleAdapter['pdfURL'])
-              : Image.network(
-                  articleAdapter['imageURL'],
-                  colorBlendMode: BlendMode.color,
-                  color: Colors.red.withAlpha(50),
-                ),
+            // Image
+            (articleAdapter['imageURL'] == "")
+                ? PDFViewContainer(articleAdapter['pdfURL'])
+                : Image.network(
+                    articleAdapter['imageURL'],
+                    colorBlendMode: BlendMode.color,
+                    color: Colors.red.withAlpha(50),
+                  ),
 
-          SizedBox(
-            height: 10,
-          ),
-        ],
+            SizedBox(
+              height: 10,
+            ),
+          ],
+        ),
       ),
     );
   }

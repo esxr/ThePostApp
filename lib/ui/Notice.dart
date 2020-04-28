@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:thepostapp/ui/NoticeExpanded.dart';
 
 // Function used to serve Article class as a parameter
 Function Notice() {
@@ -26,38 +27,48 @@ class NoticeView extends StatelessWidget {
   Widget build(BuildContext context) {
     var articleAdapter = adapter(data);
 
-    return Container(
-      decoration: containerDecoration,
-      child: Column(
-        children: <Widget>[
-          SizedBox(
-            height: 10,
+    return GestureDetector(
+      onTap: () {
+        Navigator.of(context).push(MaterialPageRoute(
+          builder: (context) => NoticeViewExpanded(
+            data: this.data,
+            adapter: this.adapter,
           ),
+        ));
+      },
+      child: Container(
+        decoration: containerDecoration,
+        child: Column(
+          children: <Widget>[
+            SizedBox(
+              height: 10,
+            ),
 
-          // Title and Quit Icon
-          Row(
-            crossAxisAlignment: CrossAxisAlignment.end,
-            // mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              Expanded(
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Text(articleAdapter['title'], style: titleStyle),
+            // Title and Quit Icon
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.end,
+              // mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Expanded(
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Text(articleAdapter['title'], style: titleStyle),
+                  ),
                 ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(right: 8, bottom: 8),
-                child: Text(
-                  ">",
-                  style: titleStyle,
-                  textAlign: TextAlign.right,
-                ),
-              )
-            ],
-          ),
+                Padding(
+                  padding: const EdgeInsets.only(right: 8, bottom: 8),
+                  child: Text(
+                    ">",
+                    style: titleStyle,
+                    textAlign: TextAlign.right,
+                  ),
+                )
+              ],
+            ),
 
-          SizedBox(height: 10),
-        ],
+            SizedBox(height: 10),
+          ],
+        ),
       ),
     );
   }
