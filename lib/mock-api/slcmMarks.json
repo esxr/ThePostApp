@@ -1,12 +1,4 @@
-import 'package:http/http.dart' as http;
-import 'dart:convert';
-
-Future<List<dynamic>> slcmApi() async {
-  List<Object> _list = slcm['academicDetails'];
-  Object academicDetails = _list[0];
-}
-
-var slcm = {
+{
     "message": "OK",
     "status": true,
     "updatedAt": 1587880879103,
@@ -249,4 +241,4 @@ var slcm = {
             ]
         }
     ]
-};
+}

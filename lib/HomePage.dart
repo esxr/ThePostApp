@@ -5,7 +5,9 @@ import 'package:thepostapp/tabs/Articles.dart';
 import 'package:thepostapp/tabs/Events.dart';
 import 'package:thepostapp/tabs/Notices.dart';
 import 'package:thepostapp/tabs/Privacy.dart';
+import 'package:thepostapp/tabs/SLCM.dart';
 import 'package:thepostapp/tabs/placeHolderTab.dart';
+import 'package:thepostapp/ui/SlcmAttendanceCard.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -50,7 +52,7 @@ class MyHomeState extends State<Home> with SingleTickerProviderStateMixin {
                   icon: Icon(Icons.home)),
               IconButton(
                   onPressed: () {
-                    changeTab(PlaceHolderTab());
+                    changeTab(SLCM());
                   },
                   icon: Icon(Icons.person)),
               BottomNavPopUpMenu(),
