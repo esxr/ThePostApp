@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:thepostapp/adapters/slcmAdapter.dart';
 import 'package:thepostapp/api/slcmApi.dart';
 import 'package:thepostapp/components/Layout.dart';
-import 'package:thepostapp/ui/SlcmAttendanceCard.dart';
+import 'package:thepostapp/ui/SlcmCard.dart';
 
 class SLCM extends StatelessWidget {
   @override
@@ -14,9 +14,9 @@ class SLCM extends StatelessWidget {
         backgroundColor: Colors.white,
       ),
       body: Layout(
-        api: slcmApi(),
-        adapter: AttendanceAdapter(),
-        ui: SlcmAttendanceCard(),
+        api: slcmApiAttendance(),
+        adapter: SlcmAdapter(),
+        ui: SlcmCard(),
       ),
     );
   }

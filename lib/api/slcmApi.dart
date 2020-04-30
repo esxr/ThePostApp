@@ -1,9 +1,35 @@
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 
+import 'package:thepostapp/api/slcmApiFix.dart';
+
 Future<List<dynamic>> slcmApi() async {
   List<Object> _list = slcm['academicDetails'];
   Object academicDetails = _list[0];
+
+  return academicDetails;
+}
+
+Future<List<dynamic>> slcmApiAttendance() async {
+  List<Object> _list = slcm['academicDetails'];
+  Map academicDetails = _list[0];
+
+  // APPLY API FIX ('is_lab' not working, 'LAB' not present in subject name)
+  var attendance = labelLabs_attendance(academicDetails['attendance']);
+  
+  print(attendance);
+  return attendance;
+}
+
+Future<List<dynamic>> slcmApiMarks() async {
+  List<Object> _list = slcm['academicDetails'];
+  Map academicDetails = _list[0];
+
+  // APPLY API FIX ('is_lab' not working)
+  var marks = labelLabs_internalMarks(academicDetails['internalMarks']);
+
+  print(marks);
+  return marks;
 }
 
 var slcm = {

@@ -31,6 +31,7 @@ class _LayoutState extends State<Layout>
 
   @override
   void dispose() {
+    super.dispose();
     keepAlive = false;
     updateKeepAlive();
   }

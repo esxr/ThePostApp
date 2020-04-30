@@ -1,13 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:thepostapp/components/BottomNavPopUpMenu/BottomNavPopUpMenu.dart';
-import 'package:thepostapp/tabs/About.dart';
 import 'package:thepostapp/tabs/Articles.dart';
 import 'package:thepostapp/tabs/Events.dart';
 import 'package:thepostapp/tabs/Notices.dart';
-import 'package:thepostapp/tabs/Privacy.dart';
 import 'package:thepostapp/tabs/SLCM.dart';
-import 'package:thepostapp/tabs/placeHolderTab.dart';
-import 'package:thepostapp/ui/SlcmAttendanceCard.dart';
 
 class Home extends StatefulWidget {
   @override

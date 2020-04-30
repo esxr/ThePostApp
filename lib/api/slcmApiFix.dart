@@ -1,3 +1,5 @@
+import 'package:thepostapp/api/slcmApi.dart';
+
 var attendance = [
   {
     "subjectName": "MICROPROCESSORS",
@@ -134,7 +136,7 @@ var internalMarks = [
 /* LABEL LABS
 *  - if 'attendanceElement' is a lab; set 'is_lab' property to 'true'
 */
-_labelLabs_attendance(List<Object> attendance) {
+labelLabs_attendance(List<Object> attendance) {
   var newAttendance = new List();
 
   // given  an element,
@@ -193,10 +195,11 @@ _labelLabs_attendance(List<Object> attendance) {
 /* LABEL MARKS
 *  - if 'internalMarksElement' is a lab; set 'is_lab' property to 'true'
 */
-_labelLabs_internalMarks(internalMarks) {
+labelLabs_internalMarks(internalMarks) {
   var newInternalMarks = [...internalMarks];
   newInternalMarks.forEach((internalMarksElement) {
-    if (internalMarksElement['subject_name'].contains(new RegExp(r'[0-9\(\)]+P'))) {
+    if (internalMarksElement['subject_name']
+        .contains(new RegExp(r'[0-9\(\)]+P'))) {
       internalMarksElement['is_lab'] = true;
     }
   });
@@ -207,7 +210,8 @@ _labelLabs_internalMarks(internalMarks) {
 /* Find the corresponding 'internalMarks' element of an 'attendance' element
 *   - find elements in 'internalMarks' with similar name as element
 */
-findInternalMarksElement(attendanceObject, internalMarks) {
+findInternalMarksElement(attendanceObject) async {
+  var internalMarks = await slcmApiMarks();
   var correspondingInternalMarksElement = null;
   var similarElements = [];
 
@@ -221,7 +225,7 @@ findInternalMarksElement(attendanceObject, internalMarks) {
 
   // select  that element which has 'is_lab' same as that of 'attendanceObject'
   similarElements.forEach((internalMarksElement) {
-    if(internalMarksElement['is_lab'] == attendanceObject['is_lab']) {
+    if (internalMarksElement['is_lab'] == attendanceObject['is_lab']) {
       correspondingInternalMarksElement = internalMarksElement;
     }
   });
@@ -229,25 +233,20 @@ findInternalMarksElement(attendanceObject, internalMarks) {
   return correspondingInternalMarksElement;
 }
 
-/* RENAME LABS
-*  - find 'is_lab' elements and rename them to "Name" + "LAB"
+/* RENAME IF LAB
+*  - find 'is_lab' elements and rename them to "Name" + "LAB" (element should be labelled already)
 */
-renameLabs(attendance) {
-  var newAttendance = _labelLabs_attendance([...attendance]);
-  newAttendance.forEach((attendanceElement) {
-    if (attendanceElement['is_lab']) {
-      attendanceElement['subjectName'] =
-          attendanceElement['subjectName'] + " LAB";
-    }
-  });
+renameIfLab(attendanceElement) {
+  var newAttendanceElement = Map.from(attendanceElement);
+  if (newAttendanceElement['is_lab']) {
+    newAttendanceElement['subjectName'] =
+        newAttendanceElement['subjectName'] + " LAB";
+  }
 
-  return newAttendance;
+  return newAttendanceElement;
 }
 
 void main() {
-  var newAttendance = _labelLabs_attendance(attendance);
-  var newInternalMarks = _labelLabs_internalMarks(internalMarks);
-
-  var similar = findInternalMarksElement(newAttendance[0], newInternalMarks);
-  print(similar);
+  // var newAttendance = labelLabs_attendance(attendance);
+  // var labElement = renameIfLab(newAttendance[0]);
 }

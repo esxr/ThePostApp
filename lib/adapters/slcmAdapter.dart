@@ -1,31 +1,25 @@
 // Function used to pass 'articlesAdapter' as a parameter
-Function MarksAdapter() {
-  return (api) => marksAdapter(api);
-}
-
-Function AttendanceAdapter() {
-  return (api) => attendanceAdapter(api);
+Function SlcmAdapter() {
+  return (api) => slcmAdapter(api);
 }
 
 // Api-unfiltered-data -----> Adapter -----> Filtered data to UI + any other changes in data
-Map<String, Object> marksAdapter(api) {
-  var map = api['internalMarks'];
+Map<String, Object> slcmAdapter(map) {
   return {
-    'updatedAt': map['updatedAt'] ?? "none",
-    'subject': map['subject_name'] ?? "none",
-    'sessional': map['sessional'] ?? "none",
-    'assignment': map['assignment'] ?? "none",
-    'lab': map['lab'] ?? "none",
-  };
-}
+    // common
+    'updatedAt': map['updatedAt'] ?? "-",
+    'is_lab': map['is_lab'] ?? "-",
+    
+    // attendance
+    'subjectName': map['subjectName'] ?? "-",
+    'total': map['totalClasses'] ?? "-",
+    'attended': map['classesAttended'] ?? "-",
+    'absent': map['classesAbsent'] ?? "-",
 
-// Api-unfiltered-data -----> Adapter -----> Filtered data to UI + any other changes in data
-Map<String, Object> attendanceAdapter(api) {
-  var map = api['attendance'];
-  return {
-    'subject': map['subjectName'] ?? "none",
-    'total': map['totalClasses'] ?? "none",
-    'attended': map['classesAttended'] ?? "none",
-    'absent': map['classesAbsent'] ?? "none",
+    // internal Marks
+    'subject_name': map['subject_name'] ?? "-",
+    'sessional': map['sessional'] ?? "-",
+    'assignment': map['assignment'] ?? "-",
+    'lab': map['lab'] ?? "-",
   };
 }
