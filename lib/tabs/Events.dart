@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:thepostapp/adapters/eventAdapter.dart';
 import 'package:thepostapp/api/eventsApi.dart';
 import 'package:thepostapp/components/Layout.dart';
-import 'package:thepostapp/ui/Article.dart';
+import 'package:thepostapp/ui/Article/Article.dart';
 
 class Events extends StatelessWidget {
   @override

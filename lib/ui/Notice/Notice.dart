@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:thepostapp/ui/NoticeExpanded.dart';
+import 'package:thepostapp/ui/Notice/NoticeExpanded.dart';
 
 // Function used to serve Article class as a parameter
 Function Notice() {

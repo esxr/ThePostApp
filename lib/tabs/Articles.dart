@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:thepostapp/adapters/articleAdapter.dart';
 import 'package:thepostapp/api/articlesApi.dart';
 import 'package:thepostapp/components/Layout.dart';
-import 'package:thepostapp/ui/Article.dart';
+import 'package:thepostapp/ui/Article/Article.dart';
 
 class Articles extends StatelessWidget {
   @override

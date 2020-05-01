@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:thepostapp/components/BottomNavPopUpMenu/BottomNavPopUpMenu.dart';
 import 'package:thepostapp/tabs/Articles.dart';
+import 'package:thepostapp/tabs/BottomNavPopUpMenu/BottomNavPopUpMenu.dart';
 import 'package:thepostapp/tabs/Events.dart';
 import 'package:thepostapp/tabs/Notices.dart';
 import 'package:thepostapp/tabs/SLCM.dart';
@@ -36,6 +36,7 @@ class MyHomeState extends State<Home> with SingleTickerProviderStateMixin {
       body: currentTab,
       bottomNavigationBar: BottomAppBar(
         child: Container(
+          // TODO : Remove hardcoded value
           height: 70,
           child: Row(
             mainAxisSize: MainAxisSize.max,

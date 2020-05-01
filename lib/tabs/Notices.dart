@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:thepostapp/adapters/noticeAdapter.dart';
 import 'package:thepostapp/api/noticesApi.dart';
 import 'package:thepostapp/components/Layout.dart';
-import 'package:thepostapp/ui/Notice.dart';
+import 'package:thepostapp/ui/Notice/Notice.dart';
 
 class Notices extends StatelessWidget {
   @override

@@ -1,14 +1,21 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 
 class Layout extends StatefulWidget {
   final Future<List<dynamic>> api;
   final Function adapter;
   final Function ui;
   final Widget divider;
+  final Axis direction;
   static const defaultDivider = Divider(color: Color.fromARGB(0, 0, 0, 0));
 
-  Layout({this.api, this.adapter, this.ui, this.divider = defaultDivider});
+  Layout(
+      {this.api,
+      this.adapter,
+      this.ui,
+      this.divider = defaultDivider,
+      this.direction = Axis.vertical});
 
   @override
   _LayoutState createState() => _LayoutState();
@@ -48,6 +55,7 @@ class _LayoutState extends State<Layout>
               List<dynamic> data = snapshot.data;
 
               return ListView.separated(
+                scrollDirection: widget.direction,
                 itemCount: data.length,
                 itemBuilder: (context, index) {
                   return widget.ui(data[index], widget.adapter);

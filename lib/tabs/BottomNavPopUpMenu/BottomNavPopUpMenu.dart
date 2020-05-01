@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:thepostapp/components/BottomNavPopUpMenu/MenuButton.dart';
+import 'package:thepostapp/experimental/placeHolderTab.dart';
 import 'package:thepostapp/tabs/About.dart';
+import 'package:thepostapp/tabs/BottomNavPopUpMenu/MenuButton.dart';
+import 'package:thepostapp/tabs/Magazines.dart';
 import 'package:thepostapp/tabs/Privacy.dart';
-import 'package:thepostapp/tabs/placeHolderTab.dart';
 
 class BottomNavPopUpMenu extends StatelessWidget {
   openTab(Widget tab, context) {
