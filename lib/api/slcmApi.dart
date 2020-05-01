@@ -16,8 +16,7 @@ Future<List<dynamic>> slcmApiAttendance() async {
 
   // APPLY API FIX ('is_lab' not working, 'LAB' not present in subject name)
   var attendance = labelLabs_attendance(academicDetails['attendance']);
-  
-  print(attendance);
+
   return attendance;
 }
 
@@ -28,7 +27,6 @@ Future<List<dynamic>> slcmApiMarks() async {
   // APPLY API FIX ('is_lab' not working)
   var marks = labelLabs_internalMarks(academicDetails['internalMarks']);
 
-  print(marks);
   return marks;
 }
 

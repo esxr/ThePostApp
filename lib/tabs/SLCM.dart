@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:thepostapp/adapters/slcmAdapter.dart';
 import 'package:thepostapp/api/slcmApi.dart';
 import 'package:thepostapp/components/Layout.dart';
-import 'package:thepostapp/ui/SlcmCard.dart';
+import 'package:thepostapp/ui/SlcmCard/SlcmCard.dart';
 
 class SLCM extends StatelessWidget {
   @override
