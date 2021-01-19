@@ -1,2 +1,6 @@
-# ThePostApp
- The MIT Post Flutter App
+# The Post App
+A clone of the MIT Post App made in **flutter**.
+
+<div display="flex">
+ <img src="screenshots/1.jpeg" width="319" height="675"/>&nbsp;&nbsp;<img src="screenshots/2.jpeg" width="319" height="675"/>&nbsp;&nbsp;<img src="screenshots/3.jpeg" width="319" height="675"/>&nbsp;&nbsp;<img src="screenshots/4.jpeg" width="319" height="675"/>&nbsp;&nbsp;<img src="screenshots/5.jpeg" width="319" height="675"/>
+<div>
